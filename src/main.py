@@ -91,6 +91,7 @@ def main() -> None:
     """Executa o menu contínuo; os dados duram apenas esta sessão."""
     tarefas: list[dict[str, str]] = []
     while True:
+        print(f"\nTaskTracker — {len(tarefas)} tarefa(s) nesta sessão")
         print("\n1. Cadastrar nova tarefa\n2. Visualizar tarefas cadastradas"
               "\n3. Sair da aplicação\n4. Concluir tarefa")
         try:
