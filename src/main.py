@@ -11,6 +11,8 @@ def criar_tarefa(titulo: str, descricao: str, prioridade: str, prazo: str) -> di
         raise ValueError("Prioridade inválida. Use Alta, Média (ou Media) ou Baixa.")
     try:
         limite = datetime.strptime(prazo, "%d/%m/%Y").date()
+        if limite.strftime("%d/%m/%Y") != prazo:
+            raise ValueError("Formato de data inválido")
     except ValueError as exc:
         raise ValueError("Data inválida. Use DD/MM/AAAA.") from exc
     if limite < date.today():
